@@ -88,7 +88,7 @@ function calculoImc() {
 function conversor() {
     let dolares = parseFloat(prompt(`Digite a quantia desejada para converter: `))
     let cotacao = 5.07
-    const reais = dolar * cotacao
+    let reais = dolar * cotacao
     console.log(`Sua conversão de ${reais}R$ resulta em ${dolar}.`)
     console.log(`Atualmente o $ em R$ = ${cotacao}`)
     menu()
@@ -125,7 +125,7 @@ function tabuada() {
 
 function conversorM() {
     let metros = parseInt(prompt("Digite quantos metros você quer converter: "))
-    const conversao = metros * 100
+    let conversao = metros * 100
     console.log(`A sua conversão de ${metros} para centimetros é = ${conversao}`)
     menu()
 }
@@ -133,7 +133,7 @@ function conversorM() {
 
 function temperatura() {
     let celsius = parseFloat(prompt("Digite quantos graus CelsiUs(°C) você deseja converter para Fahrenheit (°F)"))
-    const tempF = (celsius * 1.8) + 32
+    let tempF = (celsius * 1.8) + 32
     console.log(`A sua conversão de ${celsius}°C para Fahrenheit(°F) é = ${tempF}`)
     menu()
 }
