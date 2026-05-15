@@ -16,9 +16,11 @@ function menu() {
     console.log("| 3 - MULTIPLICAR [*]         |")
     console.log("| 4 - DIVIDIR [/]             |")
     console.log("| 5 - CALCULAR IMC            |")
-    console.log("| 6 - CONVERSÃO ($ ----> R$)  |")
+    console.log("| 6 - CONVERSÃO ($ -> R$)     |")
     console.log("| 7 - MÉDIA NOTAS             |")
     console.log("| 8 - TABUADA                 |")
+    console.log("| 9 - CONVERSÃO (M -> CM)     |")
+    console.log("| 10 - CONVERSÃO (C -> F)     |")
     console.log("*=============================*")
 
 }
@@ -79,7 +81,9 @@ function calculoImc() {
     else if (imc >= 40) {
         console.log(`O seu imc é ${imc} e sua classificação é: Obesidade Classe III! O estado atual é perigoso, busque perder peso.`)
     }
+    menu()
 }
+
 
 function conversor() {
     let dolares = parseFloat(prompt(`Digite a quantia desejada para converter: `))
@@ -87,6 +91,7 @@ function conversor() {
     const reais = dolar * cotacao
     console.log(`Sua conversão de ${reais}R$ resulta em ${dolar}.`)
     console.log(`Atualmente o $ em R$ = ${cotacao}`)
+    menu()
 }
 
 
@@ -100,10 +105,12 @@ function media() {
         console.log("Você digitou algo errao tente novamente...")
     } else if (media >= 70) {
         console.log("Você foi aprovado, parabéns!")
+        console.log(`A sua média é de ${media}`)
     } else if (media > 70) {
         console.log("Você foi reprovado...")
+        console.log(`A sua média é de ${media}`)
     }
-    console.log(`A sua média é de ${media}`)
+    menu()
 }
 
 
@@ -112,7 +119,25 @@ function tabuada() {
     for (let contador = 0; contador <= 10; contador++) {
         console.log(`${numero} x ${contador} = ${numero * contador}`)
     }
+    menu()
 }
+
+
+function conversorM() {
+    let metros = parseInt(prompt("Digite quantos metros você quer converter: "))
+    const conversao = metros * 100
+    console.log(`A sua conversão de ${metros} para centimetros é = ${conversao}`)
+    menu()
+}
+
+
+function temperatura() {
+    let celsius = parseFloat(prompt("Digite quantos graus CelsiUs(°C) você deseja converter para Fahrenheit (°F)"))
+    const tempF = (celsius * 1.8) + 32
+    console.log(`A sua conversão de ${celsius}°C para Fahrenheit(°F) é = ${tempF}`)
+    menu()
+}
+
 
 //ESTRUTURA DE REPETIÇÃO
 
@@ -137,6 +162,10 @@ while (opcao != 0) {
         media()
     } else if (opcao == 8) {
         tabuada()
+    } else if (opcao == 9) {
+        conversorM()
+    } else if (opcao == 10) {
+        temperatura()
     } else {
         console.log(`Você digitou algo errado!`)
         menu()
